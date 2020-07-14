@@ -1,0 +1,23 @@
+{
+  "name": "scrollup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imertgul/scrollUp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imertgul/scrollUp/issues"
+  },
+  "homepage": "https://github.com/imertgul/scrollUp#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
