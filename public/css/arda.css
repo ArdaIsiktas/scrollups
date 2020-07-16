@@ -36,7 +36,7 @@ section{
     position: relative;
 }
 .gradient_bg{
-    background: #f2c900;
+    background: #212331;
 }
 .gradient_bg_default{
     background: #212331;
@@ -60,7 +60,7 @@ section{
 /*Back To Top*/
 .back-top {
    color: #fff;
-   background: #f2c900;
+   background: #212331;
 }
 .back-top::before {
    background: #212331;
