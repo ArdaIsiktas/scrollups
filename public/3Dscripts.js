@@ -2,7 +2,7 @@ var scene = new THREE.Scene();
 var scrollUp;
 
 var camera = new THREE.PerspectiveCamera(25, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.set(20, 15, 15);
+camera.position.set(20, 10, 15);
 
 
 var renderer = new THREE.WebGLRenderer({
@@ -13,9 +13,9 @@ renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
 document.getElementById("3D").appendChild(renderer.domElement);
 
 var controls = new THREE.OrbitControls(camera, renderer.domElement);
-controls.enableDamping = false;
+controls.enableDamping = true;
 controls.autoRotate = true;
-controls.dampingFactor = 0.15;
+controls.dampingFactor = 1;
 controls.enableZoom = false;
 
 var yariKure = new THREE.HemisphereLight(0xffffff, 0x000000, 10);
@@ -37,13 +37,14 @@ mtlLoader.load('kapalı.mtl', function (materials) {
     objLoader.load('kapalı.obj', function (object) {
         scene.add(object);
         scrollUp = object;
-        //object.position.y -= 60;
+        object.position.z = 5;
+        object.position.x = 0;
+        // object.position.x = 0;
     });
 });
 
 var animate = function () {
     requestAnimationFrame(animate);
-    
     controls.update();
     renderer.render(scene, camera);
 };
