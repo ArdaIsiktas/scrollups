@@ -60,7 +60,7 @@ section{
 /*Back To Top*/
 .back-top {
    color: #fff;
-   background: #212331;
+   background: #01cc5c;
 }
 .back-top::before {
    background: #212331;
@@ -87,7 +87,7 @@ ul.social-icons.white li a:hover,
 ul.social-icons.white li a:focus{
     color: #fff;
    -webkit-box-shadow: 0 0 15px 30px #212331 inset;
-   box-shadow: 0 0 15px 30px #212331 inset;
+   box-shadow: 0 0 15px 30px #01cc5c inset;
 }
 
 
@@ -108,7 +108,7 @@ ul.social-icons.white li a:focus{
    border: 1px solid #fff;  
 }
 .btnwhite:hover, .btnwhite:focus{
-    background: #212331;
+    background: #01cc5c;
 }
 
 .btnwhite-hole:hover, .btnwhite-hole:focus {
@@ -532,7 +532,7 @@ ul.social-icons.white li a:focus{
 
 /*Overlays*/
 .overlay {
-   background: rgba(242, 201, 0, .9);
+   background: #01cc5c;
 }
 .dark_overlay .overlay {
    background: rgba(33,35,49, .9);
