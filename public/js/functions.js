@@ -991,36 +991,54 @@ $("#submit_btn").click(function() {
    
 
 });
+var playedOnce = false;
 
+$(document).ready(function() {
+   // Get media - with autoplay disabled (audio or video)
+   var media = $('#myVideo').not("[autoplay='autoplay']");
+   var tolerancePixel = 500;
+
+   function checkMedia(){
+       // Get current browser top and bottom
+       var scrollTop = $(window).scrollTop() + tolerancePixel;
+       var scrollBottom = $(window).scrollTop() + $(window).height() - tolerancePixel;
+
+       media.each(function(index, el) {
+           var yTopMedia = $(this).offset().top;
+           var yBottomMedia = $(this).height() + yTopMedia;
+
+           if(scrollTop < yBottomMedia && scrollBottom > yTopMedia && !playedOnce){ //view explaination in `In brief` section above
+               $(this).get(0).play();
+               playedOnce = true;
+           } else {
+               // $(this).get(0).pause();
+           }
+       });
+   }
+   $(document).on('scroll', checkMedia);
+});
 /*
 jQuery(function () {
    jQuery("#bgndVideo").vimeo_player();
 });
 */
 
-var frameNumber = 0, // start video at frame 0
-    // lower numbers = faster playback
-    playbackConst = 500, 
-    // get page height from video duration
-   //  setHeight = document.getElementById("video"), 
-    setHeight = document.getElementById("aboutus"), 
-    // select video element         
-    vid = document.getElementById('videos'); 
-    // var vid = $('#v0')[0]; // jquery option
+// var aboutUs = document.getElementById()("aboutus");
+// var vid = document.getElementById()("myVideo");
 
-// dynamically set the page height according to video length
-vid.addEventListener('loadedmetadata', function() {
-  setHeight.style.height = Math.floor(vid.duration) * playbackConst + "px";
-});
+// aboutUs.scroll(function() {
+//    var st = aboutUs.scrollTop();
+//    if (st>50) {
+//       vid.play();
+//    }
+// })
 
-
-// Use requestAnimationFrame for smooth playback
-function scrollPlay(){  
-  var frameNumber  = window.pageYOffset/playbackConst;
-  vid.currentTime  = frameNumber;
-  window.requestAnimationFrame(scrollPlay);
-}
-
-window.requestAnimationFrame(scrollPlay);
-
-
+// let options = {
+//    root: document.querySelector('#myVideo'),
+//    rootMargin: '0px',
+//    threshold: 1.0
+//  }
+ 
+//  let observer = new IntersectionObserver(function(params) {
+//     vid.play();
+//  }, options);

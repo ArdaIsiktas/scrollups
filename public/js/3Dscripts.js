@@ -26,7 +26,7 @@ controls.enableZoom = false;
 controls.minPolarAngle = 4.5 * Math.PI / 12; // 1.5 * Math.PI / 12; 
 controls.maxPolarAngle = 5.5 * Math.PI / 12; 
 
-var yariKure = new THREE.HemisphereLight(0xffffff, 0x000000, 10);
+var yariKure = new THREE.HemisphereLight(0xffffff, 0x000000, 7);
 scene.add(yariKure);
 
 // scene.background = new THREE.Color(0xf0f0f0);
@@ -35,14 +35,14 @@ renderer.setClearColor(0x000000, 0);
 var mtlLoader = new THREE.MTLLoader();
 mtlLoader.setTexturePath('/3D/');
 mtlLoader.setPath('/3D/');
-mtlLoader.load('kapalı.mtl', function (materials) {
+mtlLoader.load('final2.mtl', function (materials) {
 
     materials.preload();
 
     var objLoader = new THREE.OBJLoader();
     objLoader.setMaterials(materials);
     objLoader.setPath('/3D/');
-    objLoader.load('kapalı.obj', function (object) {
+    objLoader.load('final2.obj', function (object) {
         scene.add(object);
         scrollUp = object;
         object.position.z = 5;
